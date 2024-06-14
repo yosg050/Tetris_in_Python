@@ -1,0 +1,149 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class Blocks {
+            cell_size : int
+            cells : dict
+            colors : list
+            colum_move : int
+            id
+            position
+            rotation_state : int
+            row_move : int
+            draw(screen, offset_x, offset_y)
+            get_new_positions()
+            move(rows, colums)
+            rotate()
+            undo_rotate()
+          }
+          class Colors {
+            blue : tuple
+            cyan : tuple
+            dark_blue : tuple
+            green : tuple
+            grey : tuple
+            light_blue : tuple
+            orange : tuple
+            purple : tuple
+            red : tuple
+            white : tuple
+            yellow : tuple
+            get_cell_colors()
+          }
+          class Game {
+            blocks : list
+            current_block
+            data : int
+            game_over : bool
+            grid
+            next_block
+            paused : bool
+            record_change : bool
+            rows_cleared : int
+            runing_game : int
+            score : int
+            score_test : int
+            block_fits()
+            block_inside()
+            draw(screen)
+            finish()
+            get_highscore()
+            get_random_block()
+            lock_block()
+            move_down()
+            move_left()
+            move_right()
+            reset()
+            rotate()
+            run()
+            undo_rotate()
+            update_highscore()
+            update_score(lines_cleared, move_down_points)
+          }
+          class Grid {
+            cell_size : int
+            colors : list
+            grid
+            num_cols : int
+            num_rows : int
+            clear_full_rows()
+            clear_row(row)
+            draw(screen)
+            is_empty(row, colum)
+            is_inside(row, colum)
+            is_row_full(row)
+            move_row_down(row, num_rows)
+            reset()
+          }
+          class IBlock {
+            cells : dict
+            position
+          }
+          class L1Block {
+            cells : dict
+            position
+          }
+          class L2Block {
+            cells : dict
+            position
+          }
+          class OBlock {
+            cells : dict
+            position
+          }
+          class Position {
+            colum
+            row
+          }
+          class ShapeWindow {
+            bg_color
+            clock
+            game_over_surface
+            main_window
+            next_rect
+            next_surface
+            record
+            record_rect
+            record_window
+            scor_rect
+            scor_surface
+            screen
+            title_font : Font
+            win_size
+            run()
+          }
+          class TBlock {
+            cells : dict
+            position
+          }
+          class Z1Block {
+            cells : dict
+            position
+          }
+          class Z2Block {
+            cells : dict
+            position
+          }
+          IBlock --|> Blocks
+          L1Block --|> Blocks
+          L2Block --|> Blocks
+          OBlock --|> Blocks
+          TBlock --|> Blocks
+          Z1Block --|> Blocks
+          Z2Block --|> Blocks
+          Grid --* Game : grid
+          Position --o Blocks : position
+          Position --o IBlock : position
+          Position --o L1Block : position
+          Position --o L2Block : position
+          Position --o OBlock : position
+          Position --o TBlock : position
+          Position --o Z1Block : position
+          Position --o Z2Block : position
+  
+       </div>
+  </body>
+</html>
