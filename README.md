@@ -1,1 +1,1 @@
-A task in studies, developing a game in Python with the object-oriented programming pygame library
+A study assignment: Developing a game in Python using object-oriented programming with the Pygame library
